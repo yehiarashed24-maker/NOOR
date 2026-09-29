@@ -6,12 +6,12 @@ import { motion } from 'framer-motion'
 import { useMousePosition } from '@/hooks/useMousePosition'
 
 // Fallback CSS Heart when WebGL is unavailable or during loading
-export const CSSHeartFallback: React.FC<{ size?: 'sm' | 'md' | 'lg' | 'xl' }> = ({ size = 'xl' }) => {
+export const CSSHeartFallback: React.FC<{ size?: 'sm' | 'md' | 'lg' | 'xl' }> = ({ size = 'lg' }) => {
   const sizeClasses = {
     sm: 'w-16 h-16',
-    md: 'w-28 h-28',
-    lg: 'w-44 h-44',
-    xl: 'w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72',
+    md: 'w-24 h-24',
+    lg: 'w-36 h-36 sm:w-44 sm:h-44',
+    xl: 'w-48 h-48 sm:w-56 sm:h-56',
   }
 
   return (
@@ -120,8 +120,8 @@ function HeartMesh({ mousePos }: { mousePos: { normalizedX: number; normalizedY:
 
   return (
     <group ref={groupRef}>
-      <Float speed={2.2} rotationIntensity={0.25} floatIntensity={0.4}>
-        <mesh ref={meshRef} geometry={heartGeometry} rotation={[Math.PI, 0, 0]} scale={1.85}>
+      <Float speed={2.2} rotationIntensity={0.25} floatIntensity={0.35}>
+        <mesh ref={meshRef} geometry={heartGeometry} rotation={[Math.PI, 0, 0]} scale={1.42}>
           {/* Subtle soft pink glass/satin material */}
           <meshPhysicalMaterial
             color="#FFB3D1"
@@ -142,10 +142,10 @@ function HeartMesh({ mousePos }: { mousePos: { normalizedX: number; normalizedY:
       {/* Little floating stardust points */}
       <points geometry={particlesGeo}>
         <pointsMaterial
-          size={0.04}
+          size={0.035}
           color="#FFD6E7"
           transparent
-          opacity={0.75}
+          opacity={0.7}
           blending={THREE.AdditiveBlending}
         />
       </points>
@@ -157,7 +157,7 @@ interface Heart3DProps {
   className?: string
 }
 
-export const Heart3D: React.FC<Heart3DProps> = ({ className = 'w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96' }) => {
+export const Heart3D: React.FC<Heart3DProps> = ({ className = 'w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64' }) => {
   const mousePos = useMousePosition()
   const [hasWebGL] = useState<boolean>(() => {
     if (typeof window === 'undefined') return true
@@ -186,7 +186,7 @@ export const Heart3D: React.FC<Heart3DProps> = ({ className = 'w-64 h-64 sm:w-80
   if (!hasWebGL) {
     return (
       <div className={className}>
-        <CSSHeartFallback size="xl" />
+        <CSSHeartFallback size="lg" />
       </div>
     )
   }
@@ -200,9 +200,9 @@ export const Heart3D: React.FC<Heart3DProps> = ({ className = 'w-64 h-64 sm:w-80
     >
       <div className="absolute inset-0 rounded-full bg-[#FF9FC5]/20 blur-3xl -z-10 pointer-events-none" />
       
-      <Suspense fallback={<CSSHeartFallback size="xl" />}>
+      <Suspense fallback={<CSSHeartFallback size="lg" />}>
         <Canvas
-          camera={{ position: [0, 0, 2.85], fov: 45 }}
+          camera={{ position: [0, 0, 3.3], fov: 45 }}
           dpr={[1, 2]}
           gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
           className="w-full h-full cursor-grab active:cursor-grabbing"

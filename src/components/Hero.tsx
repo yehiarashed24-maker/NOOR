@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="mb-1 sm:mb-2 flex items-center justify-center w-full"
         >
-          <Heart3D className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96" />
+          <Heart3D className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64" />
         </motion.div>
 
         {/* Phase 1: Sometimes... */}
