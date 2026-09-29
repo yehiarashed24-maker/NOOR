@@ -5,7 +5,7 @@ import { GlassCard } from './ui/GlassCard'
 import { Sparkles, Smile } from 'lucide-react'
 import { fadeInVariants, scaleUpVariants } from '@/lib/animations'
 
-export const NoorSection: React.FC = () => {
+export const NourSection: React.FC = () => {
   const words = [
     { label: 'Gada3a', desc: 'أجدع صاحبة ya sahbty' },
     { label: 'Pure Vibe', desc: 'Always laughing and true' },
@@ -14,7 +14,7 @@ export const NoorSection: React.FC = () => {
   ]
 
   return (
-    <Section id="noor-section" className="py-16 sm:py-24 md:py-36 px-3 sm:px-6">
+    <Section id="nour-section" className="py-16 sm:py-24 md:py-36 px-3 sm:px-6">
       <div className="relative max-w-2xl mx-auto w-full">
         {/* Floating Smile/Sparkle badge beside the card */}
         <motion.div
@@ -43,12 +43,12 @@ export const NoorSection: React.FC = () => {
             <span>Dedicated to my best friend</span>
           </motion.div>
 
-          {/* Title: Noor 🤍 */}
+          {/* Title: Nour 🤍 */}
           <motion.h2
             variants={fadeInVariants}
             className="text-4xl sm:text-6xl md:text-7xl font-serif-playfair text-[#3A2630] font-normal tracking-tight mb-2 flex items-center justify-center gap-2 sm:gap-3"
           >
-            <span>Noor</span>
+            <span>Nour</span>
             <span className="text-2xl sm:text-4xl md:text-5xl">🤍</span>
           </motion.h2>
 

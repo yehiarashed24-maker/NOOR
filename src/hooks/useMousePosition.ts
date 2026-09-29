@@ -18,16 +18,16 @@ export function useMousePosition(): MousePosition {
   useEffect(() => {
     let ticking = false
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const updatePosition = (clientX: number, clientY: number) => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const width = window.innerWidth
           const height = window.innerHeight
           setPosition({
-            x: e.clientX,
-            y: e.clientY,
-            normalizedX: (e.clientX / width) * 2 - 1,
-            normalizedY: -(e.clientY / height) * 2 + 1,
+            x: clientX,
+            y: clientY,
+            normalizedX: (clientX / width) * 2 - 1,
+            normalizedY: -(clientY / height) * 2 + 1,
           })
           ticking = false
         })
@@ -35,8 +35,22 @@ export function useMousePosition(): MousePosition {
       }
     }
 
+    const handleMouseMove = (e: MouseEvent) => {
+      updatePosition(e.clientX, e.clientY)
+    }
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        updatePosition(e.touches[0].clientX, e.touches[0].clientY)
+      }
+    }
+
     window.addEventListener('mousemove', handleMouseMove, { passive: true })
-    return () => window.removeEventListener('mousemove', handleMouseMove)
+    window.addEventListener('touchmove', handleTouchMove, { passive: true })
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('touchmove', handleTouchMove)
+    }
   }, [])
 
   return position

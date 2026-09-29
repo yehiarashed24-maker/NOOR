@@ -53,7 +53,7 @@ export const Coincidence: React.FC = () => {
           ))}
         </div>
 
-        {/* The Climax Reveal: "There was Noor." */}
+        {/* The Climax Reveal: "There was Nour." */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 25 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -64,7 +64,7 @@ export const Coincidence: React.FC = () => {
           <div className="relative inline-block px-4 sm:px-8 py-3 sm:py-4">
             <div className="absolute inset-0 bg-gradient-to-r from-[#FFD6E7]/0 via-[#FFD6E7]/40 to-[#FFD6E7]/0 rounded-2xl blur-md" />
             <h3 className="relative text-3xl sm:text-5xl md:text-6xl font-serif-playfair text-[#C94F7C] font-normal tracking-tight">
-              There was Noor.
+              There was Nour.
             </h3>
           </div>
         </motion.div>

@@ -11,7 +11,7 @@ interface ParticleDot {
   size: number
 }
 
-export const NoorYehia: React.FC = () => {
+export const NourYehia: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false)
   const [particles, setParticles] = useState<ParticleDot[]>([])
 
@@ -31,7 +31,7 @@ export const NoorYehia: React.FC = () => {
   }
 
   return (
-    <Section id="noor-yehia-section" className="py-16 sm:py-24 md:py-40 px-3 sm:px-6">
+    <Section id="nour-yehia-section" className="py-16 sm:py-24 md:py-40 px-3 sm:px-6">
       <div className="max-w-2xl mx-auto text-center">
         {/* Subtle pill */}
         <motion.div
@@ -47,9 +47,9 @@ export const NoorYehia: React.FC = () => {
           variants={scaleUpVariants}
           className="relative flex flex-row items-center justify-center gap-3 sm:gap-8 mb-8 sm:mb-14 select-none"
         >
-          {/* Noor */}
+          {/* Nour */}
           <span className="text-3xl sm:text-5xl md:text-6xl font-serif-playfair text-[#3A2630] tracking-tight">
-            Noor
+            Nour
           </span>
 
           {/* Interactive Morphing Symbol */}
@@ -79,20 +79,20 @@ export const NoorYehia: React.FC = () => {
                   <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 text-[#FF6FA5]" />
                 </motion.div>
               ) : (
-                <motion.span
-                  key="ampersand"
+                <motion.div
+                  key="heart"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   exit={{ scale: 0 }}
-                  transition={{ duration: 0.25 }}
-                  className="text-2xl sm:text-3xl text-[#FF9FC5] font-serif-cormorant relative z-10 font-light"
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative z-10 flex items-center justify-center text-xl sm:text-2xl"
                 >
-                  &
-                </motion.span>
+                  🤍
+                </motion.div>
               )}
             </AnimatePresence>
 
-            {/* Micro Particles on hover */}
+            {/* Sparkle burst particles */}
             <AnimatePresence>
               {isHovered &&
                 particles.map((p) => (

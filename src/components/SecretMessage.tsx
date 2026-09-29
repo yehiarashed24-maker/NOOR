@@ -83,7 +83,7 @@ export const SecretMessage: React.FC = () => {
               {/* Letter Content */}
               <div className="space-y-6 text-[#3A2630] font-serif-playfair leading-relaxed">
                 <p className="text-2xl sm:text-3xl text-[#C94F7C] font-normal">
-                  Noor,
+                  Nour,
                 </p>
 
                 <p className="text-base sm:text-lg font-serif-cormorant italic text-[#3A2630]/85 font-normal leading-relaxed">

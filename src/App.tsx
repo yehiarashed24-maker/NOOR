@@ -3,8 +3,8 @@ import Lenis from 'lenis'
 import { Hero } from './components/Hero'
 import { DateSection } from './components/DateSection'
 import { Coincidence } from './components/Coincidence'
-import { NoorSection } from './components/NoorSection'
-import { NoorYehia } from './components/NoorYehia'
+import { NourSection } from './components/NourSection'
+import { NourYehia } from './components/NourYehia'
 import { InteractiveQuestion } from './components/InteractiveQuestion'
 import { SecretMessage } from './components/SecretMessage'
 import { FinalSection } from './components/FinalSection'
@@ -52,7 +52,7 @@ export function App() {
       {/* Top Subtle Brand Bar */}
       <header className="fixed top-0 left-0 right-0 z-30 flex items-center justify-between px-6 py-4 pointer-events-none">
         <span className="text-xs uppercase tracking-[0.25em] font-medium text-[#C94F7C]/70">
-          Noor & Yehia
+          Nour & Yehia
         </span>
         <span className="text-xs tracking-wider text-[#3A2630]/40 font-mono">
           27.09.2026
@@ -70,11 +70,11 @@ export function App() {
         {/* 3. The Coincidence Narrative */}
         <Coincidence />
 
-        {/* 4. Noor Dedicated Card */}
-        <NoorSection />
+        {/* 4. Nour Dedicated Card */}
+        <NourSection />
 
-        {/* 5. Noor & Yehia Composition */}
-        <NoorYehia />
+        {/* 5. Nour & Yehia Composition */}
+        <NourYehia />
 
         {/* 6. Interactive Question */}
         <InteractiveQuestion />

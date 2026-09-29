@@ -47,10 +47,10 @@ export const FinalSection: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Phase 4: Noor */}
+        {/* Phase 4: Nour */}
         <motion.div variants={fadeInVariants} className="pt-2 px-2">
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif-playfair text-[#3A2630] flex items-center justify-center gap-2 sm:gap-3">
-            <span>Noor</span>
+            <span>Nour</span>
             <span className="text-2xl sm:text-3xl md:text-4xl">🤍</span>
           </h3>
 

@@ -1,20 +1,21 @@
-import React, { useRef, useMemo, useState, Suspense } from 'react'
+import React, { useRef, useMemo, useState, useEffect, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Float } from '@react-three/drei'
 import * as THREE from 'three'
 import { motion } from 'framer-motion'
 import { useMousePosition } from '@/hooks/useMousePosition'
 
-// Fallback CSS Heart when WebGL is unavailable or reduced motion
-export const CSSHeartFallback: React.FC<{ size?: 'sm' | 'md' | 'lg' }> = ({ size = 'md' }) => {
+// Fallback CSS Heart when WebGL is unavailable or during loading
+export const CSSHeartFallback: React.FC<{ size?: 'sm' | 'md' | 'lg' | 'xl' }> = ({ size = 'xl' }) => {
   const sizeClasses = {
     sm: 'w-16 h-16',
     md: 'w-28 h-28',
-    lg: 'w-40 h-40',
+    lg: 'w-44 h-44',
+    xl: 'w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72',
   }
 
   return (
-    <div className="relative flex items-center justify-center p-6">
+    <div className="relative flex items-center justify-center p-2">
       <div className={`relative ${sizeClasses[size]} animate-float`}>
         {/* Soft back glow */}
         <div className="absolute inset-0 rounded-full bg-[#FF9FC5]/35 blur-2xl animate-pulse" />
@@ -100,11 +101,11 @@ function HeartMesh({ mousePos }: { mousePos: { normalizedX: number; normalizedY:
   useFrame((state, delta) => {
     if (!groupRef.current || !meshRef.current) return
 
-    // Subtle continuous rotation
+    // Continuous rotation
     meshRef.current.rotation.y += delta * 0.45
     meshRef.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.8) * 0.08
 
-    // Gentle reaction to mouse
+    // Reaction to mouse/touch
     groupRef.current.rotation.y = THREE.MathUtils.lerp(
       groupRef.current.rotation.y,
       mousePos.normalizedX * 0.35,
@@ -119,8 +120,8 @@ function HeartMesh({ mousePos }: { mousePos: { normalizedX: number; normalizedY:
 
   return (
     <group ref={groupRef}>
-      <Float speed={2.2} rotationIntensity={0.3} floatIntensity={0.6}>
-        <mesh ref={meshRef} geometry={heartGeometry} rotation={[Math.PI, 0, 0]} scale={1.5}>
+      <Float speed={2.2} rotationIntensity={0.25} floatIntensity={0.4}>
+        <mesh ref={meshRef} geometry={heartGeometry} rotation={[Math.PI, 0, 0]} scale={1.85}>
           {/* Subtle soft pink glass/satin material */}
           <meshPhysicalMaterial
             color="#FFB3D1"
@@ -141,10 +142,10 @@ function HeartMesh({ mousePos }: { mousePos: { normalizedX: number; normalizedY:
       {/* Little floating stardust points */}
       <points geometry={particlesGeo}>
         <pointsMaterial
-          size={0.035}
+          size={0.04}
           color="#FFD6E7"
           transparent
-          opacity={0.7}
+          opacity={0.75}
           blending={THREE.AdditiveBlending}
         />
       </points>
@@ -156,7 +157,7 @@ interface Heart3DProps {
   className?: string
 }
 
-export const Heart3D: React.FC<Heart3DProps> = ({ className = 'w-48 h-48 md:w-64 md:h-64' }) => {
+export const Heart3D: React.FC<Heart3DProps> = ({ className = 'w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96' }) => {
   const mousePos = useMousePosition()
   const [hasWebGL] = useState<boolean>(() => {
     if (typeof window === 'undefined') return true
@@ -168,26 +169,40 @@ export const Heart3D: React.FC<Heart3DProps> = ({ className = 'w-48 h-48 md:w-64
     }
   })
 
+  // Ensure Three.js canvas sizes properly without needing interaction
+  useEffect(() => {
+    const triggerResize = () => {
+      window.dispatchEvent(new Event('resize'))
+    }
+    triggerResize()
+    const timer1 = setTimeout(triggerResize, 50)
+    const timer2 = setTimeout(triggerResize, 180)
+    return () => {
+      clearTimeout(timer1)
+      clearTimeout(timer2)
+    }
+  }, [])
+
   if (!hasWebGL) {
     return (
       <div className={className}>
-        <CSSHeartFallback size="md" />
+        <CSSHeartFallback size="xl" />
       </div>
     )
   }
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
       className={`relative ${className}`}
     >
       <div className="absolute inset-0 rounded-full bg-[#FF9FC5]/20 blur-3xl -z-10 pointer-events-none" />
       
-      <Suspense fallback={<CSSHeartFallback size="md" />}>
+      <Suspense fallback={<CSSHeartFallback size="xl" />}>
         <Canvas
-          camera={{ position: [0, 0, 3.8], fov: 45 }}
+          camera={{ position: [0, 0, 2.85], fov: 45 }}
           dpr={[1, 2]}
           gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
           className="w-full h-full cursor-grab active:cursor-grabbing"

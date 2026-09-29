@@ -29,14 +29,14 @@ export const Hero: React.FC = () => {
 
       {/* Main Hero Story Animation Sequence */}
       <div className="flex-1 flex flex-col items-center justify-center max-w-3xl mx-auto my-4 sm:my-6 z-10 w-full px-2">
-        {/* 3D Element */}
+        {/* 3D Element - Always at full size immediately without scale glitch */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-1 sm:mb-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="mb-1 sm:mb-2 flex items-center justify-center w-full"
         >
-          <Heart3D className="w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72" />
+          <Heart3D className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96" />
         </motion.div>
 
         {/* Phase 1: Sometimes... */}
@@ -79,17 +79,17 @@ export const Hero: React.FC = () => {
           transition={{ delay: 2.9, duration: 0.9 }}
           className="text-sm sm:text-base md:text-lg text-[#3A2630]/75 tracking-wide max-w-md mx-auto mb-5 font-light"
         >
-          The day I met the most awesome coincidence — my friend Noor.
+          The day I met the most awesome coincidence — my friend Nour.
         </motion.p>
 
-        {/* Phase 5: Noor 🤍 */}
+        {/* Phase 5: Nour 🤍 */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 3.5, duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="flex items-center justify-center gap-2 text-3xl sm:text-4xl md:text-5xl font-serif-playfair text-[#C94F7C]"
         >
-          <span>Noor</span>
+          <span>Nour</span>
           <motion.span
             animate={{ scale: [1, 1.18, 1] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
