@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import Lenis from 'lenis'
 import { Hero } from './components/Hero'
 import { DateSection } from './components/DateSection'
@@ -11,15 +12,23 @@ import { FinalSection } from './components/FinalSection'
 import { FloatingParticles } from './components/FloatingParticles'
 import { CursorGlow } from './components/CursorGlow'
 import { MusicButton } from './components/MusicButton'
+import { PasswordGate } from './components/PasswordGate'
 import { useReducedMotion } from './hooks/useReducedMotion'
 import { useSoundtrack } from './hooks/useSoundtrack'
 
 export function App() {
+  const [isUnlocked, setIsUnlocked] = useState<boolean>(() => {
+    try {
+      return sessionStorage.getItem('yehia_heart_unlocked') === 'true'
+    } catch {
+      return false
+    }
+  })
   const prefersReducedMotion = useReducedMotion()
   const { isPlaying, toggle } = useSoundtrack()
 
   useEffect(() => {
-    if (prefersReducedMotion) return
+    if (prefersReducedMotion || !isUnlocked) return
 
     const lenis = new Lenis({
       duration: 1.2,
@@ -39,10 +48,17 @@ export function App() {
       cancelAnimationFrame(rafId)
       lenis.destroy()
     }
-  }, [prefersReducedMotion])
+  }, [prefersReducedMotion, isUnlocked])
 
   return (
     <div className="relative min-h-screen bg-[#FFF8FB] text-[#3A2630] font-sans-dm selection:bg-[#FFD6E7] selection:text-[#C94F7C] overflow-x-hidden">
+      {/* Password Gate Screen (yehia heart / noni) */}
+      <AnimatePresence>
+        {!isUnlocked && (
+          <PasswordGate onUnlock={() => setIsUnlocked(true)} />
+        )}
+      </AnimatePresence>
+
       {/* Background Floating Canvas & Glows */}
       <FloatingParticles />
 
@@ -55,7 +71,7 @@ export function App() {
           Nour & Yehia
         </span>
         <span className="text-xs tracking-wider text-[#3A2630]/40 font-mono">
-          27.09.2026
+          27.09 • 02.10 • 03.10
         </span>
       </header>
 
