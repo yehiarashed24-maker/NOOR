@@ -80,9 +80,9 @@ export const DateSection: React.FC = () => {
   const octDays = Array.from({ length: 31 }, (_, i) => i + 1)
 
   return (
-    <Section id="date-section" className="py-16 sm:py-24 md:py-36 px-3 sm:px-6">
+    <Section id="date-section" className="py-6 sm:py-10 md:py-12 px-3 sm:px-6">
       {/* Section Header */}
-      <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+      <div className="text-center max-w-2xl mx-auto mb-4 sm:mb-6">
         <motion.div
           variants={fadeInVariants}
           className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFD6E7]/40 text-[#C94F7C] text-[11px] sm:text-xs uppercase tracking-wider sm:tracking-widest font-medium mb-3 sm:mb-4"
@@ -146,7 +146,7 @@ export const DateSection: React.FC = () => {
       {/* Elegant Minimal Calendar Card */}
       <motion.div
         variants={scaleUpVariants}
-        className="relative w-full max-w-sm sm:max-w-md mx-auto mb-12 sm:mb-16"
+        className="relative w-full max-w-sm sm:max-w-md mx-auto mb-6 sm:mb-8"
       >
         <motion.div
           onClick={triggerSparkles}

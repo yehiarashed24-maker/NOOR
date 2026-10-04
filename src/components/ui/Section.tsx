@@ -18,7 +18,7 @@ export const Section = forwardRef<HTMLElement, SectionProps>(
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-80px' }}
-        className={cn('relative w-full py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden', className)}
+        className={cn('relative w-full py-8 sm:py-12 md:py-14 px-4 sm:px-6 lg:px-8 overflow-hidden', className)}
         {...props}
       >
         {fullWidth ? (

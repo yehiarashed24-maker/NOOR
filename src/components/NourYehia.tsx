@@ -31,12 +31,12 @@ export const NourYehia: React.FC = () => {
   }
 
   return (
-    <Section id="nour-yehia-section" className="py-16 sm:py-24 md:py-40 px-3 sm:px-6">
+    <Section id="nour-yehia-section" className="py-6 sm:py-10 md:py-12 px-3 sm:px-6">
       <div className="max-w-2xl mx-auto text-center">
         {/* Subtle pill */}
         <motion.div
           variants={fadeInVariants}
-          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFD6E7]/40 text-[#C94F7C] text-[11px] sm:text-xs uppercase tracking-wider sm:tracking-widest font-medium mb-8 sm:mb-12"
+          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFD6E7]/40 text-[#C94F7C] text-[11px] sm:text-xs uppercase tracking-wider sm:tracking-widest font-medium mb-4 sm:mb-6"
         >
           <Sparkles className="w-3.5 h-3.5 text-[#FF6FA5]" />
           <span>Friends Duo • Ya Sahbty</span>

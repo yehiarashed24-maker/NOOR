@@ -41,9 +41,9 @@ export const InteractiveQuestion: React.FC = () => {
   }
 
   return (
-    <Section id="question-section" className="py-16 sm:py-24 md:py-36 px-3 sm:px-6">
+    <Section id="question-section" className="py-6 sm:py-10 md:py-12 px-3 sm:px-6">
       <div className="max-w-xl mx-auto w-full">
-        <GlassCard className="text-center p-5 sm:p-10 md:p-12 relative overflow-hidden w-full">
+        <GlassCard className="text-center p-5 sm:p-7 md:p-9 relative overflow-hidden w-full">
           {/* Header pill */}
           <motion.div
             variants={fadeInVariants}

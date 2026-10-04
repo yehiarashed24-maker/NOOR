@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
   }
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-between items-center px-4 pt-14 sm:pt-20 pb-8 sm:pb-12 overflow-hidden text-center">
+    <section className="relative min-h-[85vh] sm:min-h-[90vh] w-full flex flex-col justify-center items-center px-4 pt-10 sm:pt-14 pb-6 sm:pb-8 overflow-hidden text-center">
       {/* Background Soft Glow Circles */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-[34rem] sm:h-[34rem] rounded-full bg-gradient-to-tr from-[#FFD6E7]/50 via-[#FFB3D1]/30 to-transparent blur-3xl pointer-events-none -z-10" />
 

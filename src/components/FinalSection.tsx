@@ -10,8 +10,8 @@ export const FinalSection: React.FC = () => {
   }
 
   return (
-    <Section id="final-section" className="py-20 sm:py-28 md:py-48 text-center px-3 sm:px-6">
-      <div className="max-w-2xl mx-auto space-y-8 sm:space-y-12">
+    <Section id="final-section" className="py-8 sm:py-12 md:py-16 text-center px-3 sm:px-6">
+      <div className="max-w-2xl mx-auto space-y-5 sm:space-y-8">
         {/* Subtle breathing sparkle badge */}
         <motion.div
           animate={{

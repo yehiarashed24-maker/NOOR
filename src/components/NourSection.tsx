@@ -14,7 +14,7 @@ export const NourSection: React.FC = () => {
   ]
 
   return (
-    <Section id="nour-section" className="py-16 sm:py-24 md:py-36 px-3 sm:px-6">
+    <Section id="nour-section" className="py-6 sm:py-10 md:py-12 px-3 sm:px-6">
       <div className="relative max-w-2xl mx-auto w-full">
         {/* Floating Smile/Sparkle badge beside the card */}
         <motion.div
@@ -33,7 +33,7 @@ export const NourSection: React.FC = () => {
         </motion.div>
 
         {/* Soft Glassmorphism Card */}
-        <GlassCard className="p-5 sm:p-10 md:p-14 text-center relative overflow-hidden w-full">
+        <GlassCard className="p-5 sm:p-7 md:p-9 text-center relative overflow-hidden w-full">
           {/* Subtle top decoration badge */}
           <motion.div
             variants={fadeInVariants}

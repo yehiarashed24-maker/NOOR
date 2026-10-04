@@ -22,14 +22,14 @@ export const NoniStarAndLetters: React.FC = () => {
   }
 
   return (
-    <section className="relative py-16 px-4 sm:px-6 max-w-5xl mx-auto font-arabic space-y-10">
+    <section className="relative py-6 sm:py-8 px-4 sm:px-6 max-w-5xl mx-auto font-arabic space-y-6">
       {/* ================= 1. NONI STAR CERTIFICATE SHOWCASE ================= */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="relative overflow-hidden rounded-3xl border border-amber-300/60 bg-gradient-to-br from-white/90 via-amber-50/60 to-rose-50/70 p-6 sm:p-10 shadow-[0_20px_50px_-15px_rgba(245,158,11,0.15)] backdrop-blur-xl"
+        transition={{ duration: 0.6 }}
+        className="relative overflow-hidden rounded-3xl border border-amber-300/60 bg-gradient-to-br from-white/95 via-amber-50/60 to-rose-50/70 p-5 sm:p-7 shadow-[0_15px_40px_-15px_rgba(245,158,11,0.12)] backdrop-blur-xl"
       >
         <div className="absolute top-0 right-0 h-40 w-40 bg-amber-200/30 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 h-40 w-40 bg-rose-200/30 rounded-full blur-3xl pointer-events-none" />
@@ -107,11 +107,11 @@ export const NoniStarAndLetters: React.FC = () => {
 
       {/* ================= 2. 365 DAYS — 365 LETTERS SHOWCASE ================= */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.7, delay: 0.15 }}
-        className="relative overflow-hidden rounded-3xl border border-pink-300/60 bg-gradient-to-br from-white/90 via-rose-50/70 to-pink-50/80 p-6 sm:p-10 shadow-[0_20px_50px_-15px_rgba(244,63,94,0.15)] backdrop-blur-xl"
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="relative overflow-hidden rounded-3xl border border-pink-300/60 bg-gradient-to-br from-white/95 via-rose-50/70 to-pink-50/80 p-5 sm:p-7 shadow-[0_15px_40px_-15px_rgba(244,63,94,0.12)] backdrop-blur-xl"
       >
         <div className="absolute top-0 left-0 h-40 w-40 bg-pink-200/30 rounded-full blur-3xl pointer-events-none" />
 

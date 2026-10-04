@@ -24,7 +24,7 @@ export const SecretMessage: React.FC = () => {
   }, [isOpen])
 
   return (
-    <div className="flex flex-col items-center justify-center my-16 z-20 relative">
+    <div className="flex flex-col items-center justify-center my-6 sm:my-8 z-20 relative">
       {/* Trigger Button */}
       <Button
         variant="soft"

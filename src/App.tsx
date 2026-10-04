@@ -76,7 +76,7 @@ export function App() {
       <Navbar />
 
       {/* Main Single-Page Content */}
-      <main className="relative z-10 flex flex-col pt-16">
+      <main className="relative z-10 flex flex-col pt-12 sm:pt-14">
         {/* 1. Hero with Heart */}
         <Hero />
 

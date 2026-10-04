@@ -12,12 +12,12 @@ export const Coincidence: React.FC = () => {
   ]
 
   return (
-    <Section id="coincidence-section" className="py-16 sm:py-24 md:py-40 px-3 sm:px-6">
+    <Section id="coincidence-section" className="py-6 sm:py-10 md:py-12 px-3 sm:px-6">
       <div className="max-w-3xl mx-auto text-center">
         {/* Section Pill */}
         <motion.div
           variants={fadeInVariants}
-          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFD6E7]/50 text-[#C94F7C] text-[11px] sm:text-xs uppercase tracking-wider sm:tracking-widest font-medium mb-4 sm:mb-6"
+          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFD6E7]/50 text-[#C94F7C] text-[11px] sm:text-xs uppercase tracking-wider sm:tracking-widest font-medium mb-3 sm:mb-4"
         >
           <Compass className="w-3.5 h-3.5 text-[#FF6FA5]" />
           <span>Serendipity • Ya Sahbty</span>
@@ -26,7 +26,7 @@ export const Coincidence: React.FC = () => {
         {/* Large Main Heading */}
         <motion.h2
           variants={fadeInVariants}
-          className="text-3xl sm:text-5xl md:text-6xl font-serif-playfair text-[#3A2630] font-normal tracking-tight mb-8 sm:mb-16 leading-[1.2]"
+          className="text-2xl sm:text-4xl md:text-5xl font-serif-playfair text-[#3A2630] font-normal tracking-tight mb-5 sm:mb-8 leading-[1.2]"
         >
           The most beautiful <br />
           <span className="italic font-serif-cormorant text-[#C94F7C]">coincidence, ya sahbty.</span>
