@@ -14,10 +14,11 @@ import { FinalSection } from './components/FinalSection'
 import { FloatingParticles } from './components/FloatingParticles'
 import { CursorGlow } from './components/CursorGlow'
 import { PasswordGate } from './components/PasswordGate'
-import { MusicPlayer } from './components/ui/MusicPlayer'
+import { MusicButton } from './components/MusicButton'
 import { CertificateModal } from './components/ui/CertificateModal'
 import { LettersModal } from './components/ui/LettersModal'
 import { useReducedMotion } from './hooks/useReducedMotion'
+import { useSoundtrack } from './hooks/useSoundtrack'
 
 export function App() {
   const [isUnlocked, setIsUnlocked] = useState<boolean>(() => {
@@ -29,6 +30,7 @@ export function App() {
   })
 
   const prefersReducedMotion = useReducedMotion()
+  const { isPlaying, toggle } = useSoundtrack()
 
   // Smooth scroll
   useEffect(() => {
@@ -69,8 +71,8 @@ export function App() {
       {/* Desktop Cursor Glow */}
       <CursorGlow />
 
-      {/* Background Music Player */}
-      <MusicPlayer />
+      {/* Music Button at the Bottom Right with Song Title & Animated Equalizer Logo */}
+      <MusicButton isPlaying={isPlaying} onToggle={toggle} />
 
       {/* Top Navbar with Star & 365 Letters shortcuts */}
       <Navbar />
@@ -105,7 +107,7 @@ export function App() {
         <FinalSection />
       </main>
 
-      {/* Modals: The Star Certificate & 365 Letters System */}
+      {/* Modals: The Star Certificate & 365 Letters System (in Soft Romantic Theme) */}
       <CertificateModal />
       <LettersModal />
     </div>

@@ -23,7 +23,7 @@ export const starCertificateData: StarCertificate = {
   directoryName: "International Star Directory",
   starName: "noni star",
   dedicationText: "This star shines for you!",
-  dateNamed: "September 27, 2026",
+  dateNamed: "October 4, 2026",
   constellation: "Sagittarius (Archer)",
   constellationArabic: "كوكبة القوس (Sagittarius)",
   rightAscension: "19° 20' 55.75\"",
@@ -32,5 +32,5 @@ export const starCertificateData: StarCertificate = {
   catalogNumber: "58707741 (UCAC3 catalog)",
   registryUrl: "https://www.staracle.com/10058707741",
   copyrightText: "Image copyrights: © NASA/JPL-Caltech",
-  arabicDedication: "في يوم 27 سبتمبر 2026، تم تسجيل وتسمية نجمة حقيقية في الفضاء الخارجي باسم 'نوني ستار' (noni star) لتلمع دايماً في سماء الكون باسم نور ❤️",
+  arabicDedication: "في يوم 4 أكتوبر 2026 (4-10-2026)، تم تسجيل وتسمية نجمة حقيقية في الفضاء الخارجي باسم 'نوني ستار' (noni star) لتلمع دايماً في سماء الكون باسم نور ❤️",
 }

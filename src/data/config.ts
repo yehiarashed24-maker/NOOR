@@ -37,7 +37,7 @@ export const siteConfig: SiteConfig = {
   secretPassword: "noni",
   starName: "noni star",
   constellation: "Sagittarius (Archer)",
-  namingDate: "September 27, 2026",
+  namingDate: "October 4, 2026",
   starCoordinates: {
     rightAscension: "19° 20' 55.75\"",
     declination: "-20.4349°",

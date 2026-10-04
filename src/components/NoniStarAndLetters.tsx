@@ -68,7 +68,7 @@ export const NoniStarAndLetters: React.FC = () => {
             </h3>
 
             <p className="text-sm sm:text-base text-[#6b4759] leading-relaxed">
-              في يوم <strong>27 سبتمبر 2026</strong>، اتسجلت ليكي نجمة حقيقية في الفضاء الخارجي في السجل الدولي للنجوم باسم <strong>"noni star"</strong> علشان تفضل بتلمع في السماء باسمك على طول.
+              في يوم <strong>4 أكتوبر 2026 (4-10-2026)</strong>، اتسجلت ليكي نجمة حقيقية في الفضاء الخارجي في السجل الدولي للنجوم باسم <strong>"noni star"</strong> علشان تفضل بتلمع في السماء باسمك على طول.
             </p>
 
             <div className="grid grid-cols-2 gap-2 text-xs font-mono text-slate-700 bg-white/70 rounded-2xl p-3 border border-amber-200">
