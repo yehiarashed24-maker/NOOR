@@ -21,9 +21,12 @@ interface UniverseState {
   isSecretUnlocked: boolean
   savedLetters: number[] // array of day numbers
   isFinalRevealed: boolean
+  isUniverseMode: boolean
   devMode: boolean
 
   // Actions
+  openUniverse: () => void
+  closeUniverse: () => void
   completeIntro: () => void
   openSection: (section: UniverseSection) => void
   closeSection: () => void
@@ -75,9 +78,12 @@ export const useUniverseStore = create<UniverseState>((set, get) => ({
   isSecretUnlocked: getInitialSecretUnlocked(),
   savedLetters: getInitialSavedLetters(),
   isFinalRevealed: false,
+  isUniverseMode: false,
   devMode: siteConfig.devMode,
 
-  completeIntro: () => set({ introCompleted: true }),
+  openUniverse: () => set({ isUniverseMode: true, introCompleted: true }),
+  closeUniverse: () => set({ isUniverseMode: false, activeSection: 'none' }),
+  completeIntro: () => set({ introCompleted: true, isUniverseMode: true }),
 
   openSection: (section) => set({ activeSection: section }),
 

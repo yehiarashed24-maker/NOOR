@@ -2,6 +2,13 @@
 
 @layer base {
   :root {
+    --bg-primary: #FFF8FB;
+    --white: #FFFFFF;
+    --soft-pink: #FFD6E7;
+    --pink: #FF9FC5;
+    --rose: #FF6FA5;
+    --dark-pink: #C94F7C;
+    --text-primary: #3A2630;
     --bg-space: #020617;
     --star-gold: #fbbf24;
     --space-pink: #f43f5e;
@@ -11,9 +18,7 @@
 
   html {
     scroll-behavior: smooth;
-    font-family: 'Cairo', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #000000;
-    color: #f8fafc;
+    font-family: 'DM Sans', 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -22,8 +27,6 @@
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
-    background: #000000;
-    user-select: none;
   }
 }
 
@@ -40,9 +43,53 @@
   font-family: 'Outfit', sans-serif;
 }
 
+.font-serif-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-serif-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-sans-dm {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Light Romantic Glassmorphism Styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 214, 231, 0.7);
+  box-shadow: 0 20px 50px -15px rgba(255, 111, 165, 0.15),
+              0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 214, 231, 0.45);
+  box-shadow: 0 10px 30px -10px rgba(255, 111, 165, 0.08);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 159, 197, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 111, 165, 0.12);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(255, 111, 165, 0.6);
+  box-shadow: 0 8px 25px rgba(255, 111, 165, 0.22);
+}
+
 /* Dark Cosmic Glassmorphism Styles */
 .glass-cosmic {
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -62,26 +109,52 @@
   border-color: rgba(244, 63, 94, 0.4);
 }
 
-/* Cosmic Scrollbar */
+/* Custom Scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #FFF8FB;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
+  background: #FFD6E7;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(244, 63, 94, 0.5);
+  background: #FF9FC5;
 }
 
-/* Keyframe animations */
+/* Animations */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+.animate-float {
+  animation: float-gentle 5s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
 @keyframes pulse-glow {
   0%, 100% {
     opacity: 0.3;
